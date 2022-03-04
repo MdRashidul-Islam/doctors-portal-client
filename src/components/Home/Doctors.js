@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/doctors")
+    fetch("https://morning-garden-34433.herokuapp.com/doctors")
       .then((res) => res.json())
       .then((data) => setDoctors(data));
   }, []);

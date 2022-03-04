@@ -18,7 +18,7 @@ const Patients = () => {
   const [reload, setReload] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:4000/allAppointments")
+    fetch("https://morning-garden-34433.herokuapp.com/allAppointments")
       .then((res) => res.json())
       .then((data) => setBookedAppointments(data));
   }, [reload]);
@@ -34,7 +34,7 @@ const Patients = () => {
       confirmButtonText: "DELETE",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:4000/appointments/${id}`;
+        const url = `https://morning-garden-34433.herokuapp.com/appointments/${id}`;
         fetch(url, {
           method: "DELETE",
         })
@@ -67,9 +67,12 @@ const Patients = () => {
       confirmButtonText: "DELETE",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/allAppointments/${id}`, {
-          method: "PUT",
-        })
+        fetch(
+          `https://morning-garden-34433.herokuapp.com/allAppointments/${id}`,
+          {
+            method: "PUT",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.modifiedCount === 1) {

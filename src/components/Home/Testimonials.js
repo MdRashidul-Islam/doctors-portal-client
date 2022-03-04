@@ -17,7 +17,7 @@ export default function Testimonial() {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/reviews")
+    fetch("https://morning-garden-34433.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

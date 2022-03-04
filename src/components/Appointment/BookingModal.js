@@ -49,7 +49,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
 
     //send data to server
 
-    fetch("http://localhost:4000/appointments", {
+    fetch("https://morning-garden-34433.herokuapp.com/appointments", {
       method: "POST",
       headers: {
         "content-type": "application/json",

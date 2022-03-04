@@ -18,7 +18,7 @@ const Appointment = ({ date, setDate }) => {
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:4000/appointments?email=${
+    const url = `https://morning-garden-34433.herokuapp.com/appointments?email=${
       user.email
     }&date=${date?.toLocaleDateString()}`;
     fetch(url)
@@ -37,7 +37,7 @@ const Appointment = ({ date, setDate }) => {
       confirmButtonText: "DELETE",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:4000/allAppointments/${id}`;
+        const url = `https://morning-garden-34433.herokuapp.com/allAppointments/${id}`;
         fetch(url, {
           method: "DELETE",
         })

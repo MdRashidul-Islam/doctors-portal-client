@@ -20,7 +20,7 @@ const ManageAllService = () => {
   const [reload, setReload] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:4000/availableAppointments")
+    fetch("https://morning-garden-34433.herokuapp.com/availableAppointments")
       .then((res) => res.json())
       .then((data) => setAvailableAppointments(data));
   }, [reload]);
@@ -36,7 +36,7 @@ const ManageAllService = () => {
       confirmButtonText: "DELETE",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:4000/availableAppointments/${id}`;
+        const url = `https://morning-garden-34433.herokuapp.com/availableAppointments/${id}`;
         fetch(url, {
           method: "DELETE",
         })

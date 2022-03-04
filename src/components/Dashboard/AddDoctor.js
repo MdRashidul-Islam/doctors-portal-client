@@ -6,7 +6,7 @@ import PrimaryButton from "../../shared/PrimaryButton";
 const AddDoctor = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:4000/doctors", {
+    fetch("https://morning-garden-34433.herokuapp.com/doctors", {
       method: "POST",
       headers: {
         "content-type": "application/json",

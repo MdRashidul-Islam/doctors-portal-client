@@ -16,7 +16,7 @@ const Payment = () => {
   const [bookedAppointment, setBookedAppointment] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:4000/appointment/${id}`)
+    fetch(`https://morning-garden-34433.herokuapp.com/appointment/${id}`)
       .then((res) => res.json())
       .then((data) => setBookedAppointment(data));
   }, [id]);

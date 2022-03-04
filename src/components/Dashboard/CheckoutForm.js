@@ -17,7 +17,7 @@ const CheckoutForm = ({ bookedAppointment }) => {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/create-payment-intent", {
+    fetch("https://morning-garden-34433.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -112,7 +112,7 @@ const CheckoutForm = ({ bookedAppointment }) => {
         last4: paymentMethod.card.last4,
         transaction: paymentIntent.client_secret.slice("_secret")[0],
       };
-      const url = `http://localhost:4000/appointment/${_id}`;
+      const url = `https://morning-garden-34433.herokuapp.com/appointment/${_id}`;
       fetch(url, {
         method: "PUT",
         headers: {

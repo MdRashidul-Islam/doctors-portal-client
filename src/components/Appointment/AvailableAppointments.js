@@ -7,7 +7,7 @@ import { useState } from "react";
 const AvailableAppointments = ({ date }) => {
   const [appointments, setAppointments] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/availableAppointments")
+    fetch("https://morning-garden-34433.herokuapp.com/availableAppointments")
       .then((res) => res.json())
       .then((data) => setAppointments(data));
   }, []);

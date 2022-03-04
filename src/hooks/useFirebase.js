@@ -151,7 +151,7 @@ const useFirebase = () => {
   //---------------Auth state start---------------//
 
   useEffect(() => {
-    fetch(`http://localhost:4000/users/${user.email}`)
+    fetch(`https://morning-garden-34433.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -159,7 +159,7 @@ const useFirebase = () => {
   // save user state
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("http://localhost:4000/users", {
+    fetch("https://morning-garden-34433.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
