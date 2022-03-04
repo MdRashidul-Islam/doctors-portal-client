@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import Booking from "./Booking";
 import { useState } from "react";
+import Spinner from "../../shared/Spinner";
 
 const AvailableAppointments = ({ date }) => {
   const [appointments, setAppointments] = useState([]);
@@ -27,15 +28,19 @@ const AvailableAppointments = ({ date }) => {
         >
           Available Appointments on {date.toDateString()}
         </Typography>
-        <Grid container spacing={2} sx={{ marginTop: "20px" }}>
-          {appointments.map((appointment) => (
-            <Booking
-              booking={appointment}
-              date={date}
-              key={appointment._id}
-            ></Booking>
-          ))}
-        </Grid>
+        {appointments.length ? (
+          <Grid container spacing={2} sx={{ marginTop: "20px" }}>
+            {appointments.map((appointment) => (
+              <Booking
+                booking={appointment}
+                date={date}
+                key={appointment._id}
+              ></Booking>
+            ))}
+          </Grid>
+        ) : (
+          <Spinner />
+        )}
       </AvailableAppointmentsStyled>
     </Container>
   );

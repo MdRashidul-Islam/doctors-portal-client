@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
+import Swal from "sweetalert2";
 import PrimaryButton from "../../shared/PrimaryButton";
 
 const AddDoctor = () => {
@@ -14,7 +15,17 @@ const AddDoctor = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.modifiedCount) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Doctor added successfully",
+            showConfirmButton: false,
+            timer: 1000,
+          });
+        }
+      });
   };
   return (
     <AddDoctorStyled>
